@@ -1019,7 +1019,7 @@ a.then(function(){
 原型对象也可能拥有原型,这样一层一层的最终指向null,这种关系被称作原型链.`
 
 
-
+#### 移动端适配rem.js怎么使用？
 
 
 
@@ -1051,8 +1051,6 @@ function bubble(array){
   }
   return array
 }
-
-
 
 ####  请写一个斐波那契数列
 
