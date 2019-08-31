@@ -1021,8 +1021,8 @@ a.then(function(){
 
 #### 移动端适配rem.js怎么使用？
 
-
-
+#### 请写出几种能将string 类型的 '23424'转成number类型的 1234 的方法
+`答案：` parseInt('23443')  parseFloat('2342')  Number('234')  '12424'*1
 
 ## 算法题目:
 
