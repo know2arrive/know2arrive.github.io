@@ -70,6 +70,7 @@ for (let i = 0; i < 3; i++) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 由于 JavaScript 的事件循环，`setTimeout` 回调会在*遍历结束后*才执行。因为在第一个遍历中遍历 `i` 是通过 `var` 关键字声明的，所以这个值是全局作用域下的。在遍历过程中，我们通过一元操作符 `++` 来每次递增 `i` 的值。当 `setTimeout` 回调执行的时候，`i` 的值等于 3。
@@ -104,6 +105,7 @@ shape.perimeter()
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 注意 `diameter` 的值是一个常规函数，但是 `perimeter` 的值是一个箭头函数。
@@ -130,6 +132,7 @@ shape.perimeter()
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -162,6 +165,7 @@ const mouse = {
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -198,6 +202,7 @@ console.log(d.greeting)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 在 JavaScript 中，当设置两个对象彼此相等时，它们会通过*引用*进行交互。
@@ -232,6 +237,7 @@ console.log(b === c)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -272,6 +278,7 @@ freddie.colorChange('orange')
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 `colorChange` 是一个静态方法。静态方法被设计为只能被创建它们的构造器使用（也就是 `Chameleon`），并且不能传递给实例。因为 `freddie` 是一个实例，静态方法不能被实例使用，因此抛出了 `TypeError` 错误。
@@ -295,6 +302,7 @@ console.log(greetign)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -324,6 +332,7 @@ bark.animal = 'dog'
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -359,6 +368,7 @@ console.log(member.getFullName());
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -400,6 +410,7 @@ console.log(sarah)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 对于 `sarah`，我们没有使用 `new` 关键字。当使用 `new` 时，`this` 引用我们创建的空对象。当未使用 `new` 时，`this` 引用的是**全局对象**（global object）。
@@ -421,6 +432,7 @@ console.log(sarah)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 在**捕获**（capturing）阶段中，事件从祖先元素向下传播到目标元素。当事件达到**目标**（target）元素后，**冒泡**（bubbling）才开始。
@@ -439,6 +451,7 @@ console.log(sarah)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -467,6 +480,7 @@ sum(1, '2')
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 JavaScript 是一种**动态类型语言**：我们不指定某些变量的类型。值可以在你不知道的情况下自动转换成另一种类型，这种类型称为**隐式类型转换**（implicit type coercion）。**Coercion** 是指将一种类型转换为另一种类型。
@@ -494,6 +508,7 @@ console.log(number)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -536,6 +551,7 @@ getPersonInfo`${person} is ${age} years old`
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 如果使用标记模板字面量，第一个参数的值总是包含字符串的数组。其余的参数获取的是传递的表达式的值！
@@ -568,6 +584,7 @@ checkAge({ age: 18 })
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 在测试相等性时，基本类型通过它们的值（value）进行比较，而对象通过它们的引用（reference）进行比较。JavaScript 检查对象是否具有对内存中相同位置的引用。
@@ -599,6 +616,7 @@ getAge(21)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 扩展运算符（`...args`）会返回实参组成的数组。而数组是对象，因此 `typeof args` 返回 `"object"`。
@@ -628,6 +646,7 @@ getAge()
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 使用 `"use strict"`，你可以确保不会意外地声明全局变量。我们从来没有声明变量 `age`，因为我们使用 `"use strict"`，它将抛出一个引用错误。如果我们不使用 `"use strict"`，它就会工作，因为属性 `age` 会被添加到全局对象中了。
@@ -651,6 +670,7 @@ const sum = eval('10*10+5')
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 代码以字符串形式传递进来，`eval` 对其求值。如果它是一个表达式，就像本例中那样，它对表达式求值。表达式是 `10 * 10 + 5`。这将返回数字 `105`。
@@ -673,6 +693,7 @@ sessionStorage.setItem('cool_secret', 123)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -701,6 +722,7 @@ console.log(num)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -733,6 +755,7 @@ set.has(1)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 所有对象的键（不包括 Symbol）在底层都是字符串，即使你自己没有将其作为字符串输入。这就是为什么 `obj.hasOwnProperty('1')` 也返回 `true`。
@@ -759,6 +782,7 @@ console.log(obj)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 如果你有两个名称相同的键，则键会被替换掉。它仍然位于第一个键出现的位置，但是值是最后出现那个键的值。
@@ -776,6 +800,7 @@ console.log(obj)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -802,6 +827,7 @@ for (let i = 1; i < 5; i++) {
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -832,6 +858,7 @@ name.giveLydiaPizza()
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 `String` 是内置的构造函数，我们可以向它添加属性。我只是在它的原型中添加了一个方法。基本类型字符串被自动转换为字符串对象，由字符串原型函数生成。因此，所有 string(string 对象)都可以访问该方法！
@@ -861,6 +888,7 @@ console.log(a[b])
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -894,6 +922,7 @@ baz()
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -948,6 +977,7 @@ WebAPI 不能随时向栈内添加内容。相反，它将回调函数推到名�
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 导致事件的最深嵌套的元素是事件的 target。你可以通过 `event.stopPropagation` 来停止冒泡。
@@ -974,6 +1004,7 @@ WebAPI 不能随时向栈内添加内容。相反，它将回调函数推到名�
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1005,6 +1036,7 @@ sayHi.bind(person, 21)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 使用这两种方法，我们都可以传递我们希望 `this` 关键字引用的对象。但是，`.call` 是**立即执行**的。
@@ -1033,6 +1065,7 @@ typeof sayHi()
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -1063,6 +1096,7 @@ undefined
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1098,6 +1132,7 @@ console.log(typeof typeof 1)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 `typeof 1` 返回 `"number"`。
@@ -1123,6 +1158,7 @@ console.log(numbers)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -1161,6 +1197,7 @@ console.log(numbers)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 `catch` 代码块接收参数 `x`。当我们传递参数时，这与之前定义的变量 `x` 不同 。这个 `x` 是属于 `catch` 块级作用域的。
@@ -1180,9 +1217,11 @@ console.log(numbers)
 - B: 函数与对象
 - C: 只有对象
 - D: 数字与对象
--
+  -
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1214,6 +1253,7 @@ JavaScript 只有基本类型和对象。
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 `[1, 2]`是初始值。初始值将会作为首次调用时第一个参数 `acc` 的值。在第一次执行时， `acc` 的值是 `[1, 2]`， `cur` 的值是 `[0, 1]`。合并它们，结果为 `[1, 2, 0, 1]`。
@@ -1239,6 +1279,7 @@ JavaScript 只有基本类型和对象。
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -1267,6 +1308,7 @@ setInterval(() => console.log('Hi'), 1000)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 `setInterval` 返回一个唯一的 id。此 id 可被用于 `clearInterval` 函数来取消定时。
@@ -1289,6 +1331,7 @@ setInterval(() => console.log('Hi'), 1000)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1320,6 +1363,7 @@ console.log(gen.next().value);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -1355,6 +1399,7 @@ Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 当我们向`Promise.race`方法中传入多个`Promise`时，会进行 _优先_ 解析。在这个例子中，我们用`setTimeout`给`firstPromise`和`secondPromise`分别设定了500ms和100ms的定时器。这意味着`secondPromise`会首先解析出字符串`two`。那么此时`res`参数即为`two`，是为输出结果。
@@ -1381,6 +1426,7 @@ console.log(members);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -1425,6 +1471,7 @@ for (const item in person) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 在`for-in`循环中,我们可以通过对象的key来进行迭代,也就是这里的`name`和`age`。在底层，对象的key都是字符串（如果他们不是Symbol的话）。在每次循环中，我们将`item`设定为当前遍历到的key.所以一开始，`item`是`name`，之后 `item`输出的则是`age`。
@@ -1447,6 +1494,7 @@ console.log(3 + 4 + "5");
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -1475,6 +1523,7 @@ const num = parseInt("7*6", 10);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 只返回了字符串中第一个字母. 设定了 _进制_ 后 (也就是第二个参数，指定需要解析的数字是什么进制: 十进制、十六机制、八进制、二进制等等……),`parseInt` 检查字符串中的字符是否合法. 一旦遇到一个在指定进制中不合法的字符后，立即停止解析并且忽略后面所有的字符。
@@ -1502,6 +1551,7 @@ const num = parseInt("7*6", 10);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -1537,6 +1587,7 @@ console.log(person, birthYear);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1578,6 +1629,7 @@ sayHi();
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 通过`throw`语句，我么可以创建自定义错误。 而通过它，我们可以抛出异常。异常可以是一个<b>字符串</b>, 一个 <b>数字</b>, 一个 <b>布尔类型</b> 或者是一个 <b>对象</b>。在本例中，我们的异常是字符串`'Hello world'`.
@@ -1609,6 +1661,7 @@ console.log(myCar.make);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 返回属性的时候，属性的值等于 _返回的_ 值，而不是构造函数中设定的值。我们返回了字符串 `"Maserati"`，所以 `myCar.make`等于`"Maserati"`.
@@ -1636,6 +1689,7 @@ console.log(typeof y);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1687,6 +1741,7 @@ pet.bark();
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 我们可以用`delete`关键字删除对象的属性，对原型也是适用的。删除了原型的属性后，该属性在原型链上就不可用了。在本例中，函数`bark`在执行了`delete Dog.prototype.bark`后不可用, 然而后面的代码还在调用它。
@@ -1713,6 +1768,7 @@ console.log(set);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -1750,6 +1806,7 @@ console.log(myCounter);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 引入的模块是 _只读_ 的: 你不能修改引入的模块。只有导出他们的模块才能修改其值。
@@ -1779,6 +1836,7 @@ console.log(delete age);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 `delete`操作符返回一个布尔值： `true`指删除成功，否则返回`false`. 但是通过 `var`, `const` 或 `let` 关键字声明的变量无法用 `delete` 操作符来删除。
@@ -1806,6 +1864,7 @@ console.log(y);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -1849,6 +1908,7 @@ console.log(admin);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 扩展运算符`...`为对象的组合提供了可能。你可以复制对象中的键值对，然后把它们加到另一个对象里去。在本例中，我们复制了`user`对象键值对，然后把它们加入到`admin`对象中。`admin`对象就拥有了这些键值对，所以结果为`{ admin: true, name: "Lydia", age: 21 }`.
@@ -1876,6 +1936,7 @@ console.log(Object.keys(person));
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -1908,6 +1969,7 @@ console.log(data);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -1946,6 +2008,7 @@ console.log(num2);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 一元操作符 `++` _先返回_ 操作值, _再累加_ 操作值。`num1`的值是`10`, 因为`increaseNumber`函数首先返回`num`的值，也就是`10`，随后再进行 `num`的累加。
@@ -1980,6 +2043,7 @@ multiply(value);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 在ES6中，我们可以使用默认值初始化参数。如果没有给函数传参，或者传的参值为 `"undefined"` ，那么参数的值将是默认值。上述例子中，我们将 `value` 对象进行了解构并传到一个新对象中，因此 `x` 的默认值为 `{number：10}` 。
@@ -2008,6 +2072,7 @@ multiply(value);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -2075,6 +2140,7 @@ class Labrador extends Dog {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 在子类中，在调用`super`之前不能访问到`this`关键字。 如果这样做，它将抛出一个`ReferenceError`：1和4将引发一个引用错误。
@@ -2108,6 +2174,7 @@ export const sum = (a, b) => a + b;
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 `import`命令是编译阶段执行的，在代码运行之前。因此这意味着被导入的模块会先运行，而导入模块的文件会后执行。
@@ -2135,6 +2202,7 @@ console.log(Symbol('foo') === Symbol('foo'))
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 每个`Symbol`都是完全唯一的。传递给`Symbol`的参数只是给`Symbol`的一个描述。 `Symbol`的值不依赖于传递的参数。 当我们测试相等时，我们创建了两个全新的符号：第一个`Symbol（'foo'）`，第二个`Symbol（'foo'）`, 这两个值是唯一的，彼此不相等，因此返回`false`。
@@ -2160,6 +2228,7 @@ console.log(name.padStart(2))
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 使用`padStart`方法，我们可以在字符串的开头添加填充。传递给此方法的参数是字符串的总长度（包含填充）。字符串`Lydia Hallie`的长度为`12`, 因此`name.padStart（13）`在字符串的开头只会插入1（`13 - 12 = 1`）个空格。
@@ -2184,6 +2253,7 @@ console.log("🥑" + "💻");
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -2218,6 +2288,7 @@ console.log(/* 2 */); // JavaScript loves you back ❤️
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 `generator`函数在遇到`yield`关键字时会“暂停”其执行。 首先，我们需要让函数产生字符串`Do you love JavaScript?`，这可以通过调用`game.next().value`来完成。上述函数的第一行就有一个`yield`关键字，那么运行立即停止了，`yield`表达式本身没有返回值，或者说总是返回`undefined`, 这意味着此时变量 `answer` 为`undefined`
@@ -2243,6 +2314,7 @@ console.log(String.raw`Hello\nworld`);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 `String.raw`函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（`\n`，`\v`，`\t`等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
@@ -2257,9 +2329,11 @@ String.raw`${path}`
 `"C:DocumentsProjects able.html"`
 
 直接使用`String.raw`
+
 ```javascript
 String.raw`C:\Documents\Projects\table.html`
 ```
+
 它会忽略转义字符并打印：`C:\Documents\Projects\table.html`
 
 上述情况，字符串是`Hello\nworld`被打印出。
@@ -2287,6 +2361,7 @@ console.log(data);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -2322,6 +2397,7 @@ console.log(result);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 `push()`方法返回新数组的长度。一开始，数组包含一个元素（字符串`"banana"`），长度为1。 在数组中添加字符串`"apple"`后，长度变为2，并将从`addToList`函数返回。
@@ -2352,6 +2428,7 @@ console.log(shape)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -2384,6 +2461,7 @@ console.log(name);
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 当我们从右侧的对象解构属性`name`时，我们将其值`Lydia`分配给名为`myName`的变量。
@@ -2410,6 +2488,7 @@ function sum(a, b) {
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -2452,6 +2531,7 @@ console.log(addFunction(5 * 2));
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 `add`函数是一个记忆函数。 通过记忆化，我们可以缓存函数的结果，以加快其执行速度。上述情况，我们创建一个`cache`对象，用于存储先前返回过的值。
@@ -2493,6 +2573,7 @@ for (let item of myLifeSummedUp) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 通过`for-in`循环，我们可以遍历一个对象**自有的**、**继承的**、**可枚举的**、**非Symbol的**属性。 在数组中，可枚举属性是数组元素的“键”， 即它们的索引。 类似于下面这个对象：
@@ -2523,6 +2604,7 @@ console.log(list)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 数组元素可以包含任何值。 数字，字符串，布尔值，对象，数组，`null`，`undeifned`, 以及其他表达式，如日期，函数和计算。
@@ -2551,6 +2633,7 @@ console.log(sayHi())
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -2595,6 +2678,7 @@ setTimeout(() => {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 `this`关键字的指向取决于使用它的位置。 在**函数**中，比如`getStatus`，`this`指向的是调用它的对象，上述例子中`data`对象调用了`getStatus`，因此`this`指向的就是`data`对象。 当我们打印`this.status`时，`data`对象的`status`属性被打印，即`"🥑"`。
@@ -2626,6 +2710,7 @@ console.log(person)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -2666,6 +2751,7 @@ console.log(checkAge(21))
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 `const`和`let`声明的变量是具有**块级作用域**的，块是大括号（`{}`）之间的任何东西, 即上述情况`if / else`语句的花括号。 由于块级作用域，我们无法在声明的块之外引用变量，因此抛出`ReferenceError`。
@@ -2691,6 +2777,7 @@ fetch('https://www.website.com/api/user/1')
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 第二个`.then`中`res`的值等于前一个`.then`中的回调函数返回的值。 你可以像这样继续链接`.then`，将值传递给下一个处理程序。
@@ -2715,6 +2802,7 @@ function getName(name) {
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -2742,6 +2830,7 @@ console.log("I want pizza"[0])
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -2772,11 +2861,13 @@ sum(10)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 您可以将默认参数的值设置为函数的另一个参数，只要另一个参数定义在其之前即可。 我们将值`10`传递给`sum`函数。 如果`sum`函数只接收1个参数，则意味着没有传递`num2`的值，这种情况下，`num1`的值等于传递的值`10`。 `num2`的默认值是`num1`的值，即`10`。 ```num1 + num2```返回`20`。
 
 如果您尝试将默认参数的值设置为后面定义的参数，则可能导致参数的值尚未初始化，从而引发错误。比如：
+
 ```js
 function test(m = n, n = 2) {
 	console.log(m, n)
@@ -2812,6 +2903,7 @@ console.log(data)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 使用`import * as name`语法，我们将`module.js`文件中所有`export`导入到`index.js`文件中，并且创建了一个名为`data`的新对象。 在`module.js`文件中，有两个导出：默认导出和命名导出。 默认导出是一个返回字符串“Hello World”的函数，命名导出是一个名为`name`的变量，其值为字符串`“Lydia”`。
@@ -2843,6 +2935,7 @@ console.log(typeof member)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -2877,6 +2970,7 @@ console.log(newList.push(5))
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 `.push`方法返回数组的长度，而不是数组本身！ 通过将`newList`设置为`[1,2,3].push(4)`，实际上`newList`等于数组的新长度：`4`。
@@ -2909,6 +3003,7 @@ console.log(giveLydiaChocolate.prototype)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 常规函数，例如`giveLydiaPizza`函数，有一个`prototype`属性，它是一个带有`constructor`属性的对象（原型对象）。 然而，箭头函数，例如`giveLydiaChocolate`函数，没有这个`prototype`属性。 尝试使用`giveLydiaChocolate.prototype`访问`prototype`属性时会返回`undefined`。
@@ -2939,7 +3034,9 @@ for (const [x, y] of Object.entries(person)) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
+
 `Object.entries()`方法返回一个给定对象自身可枚举属性的键值对数组，上述情况返回一个二维数组，数组每个元素是一个包含键和值的数组：
 
 `[['name'，'Lydia']，['age'，21]]`
@@ -2971,6 +3068,7 @@ getItems(["banana", "apple"], "pear", "orange")
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -3014,6 +3112,7 @@ console.log(nums(1, 2))
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3061,6 +3160,7 @@ console.log(member.name)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 
@@ -3090,6 +3190,7 @@ console.log(Object.keys(info))
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -3123,6 +3224,7 @@ console.log(getUser(user))
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -3160,6 +3262,7 @@ console.log(name())
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 
@@ -3192,6 +3295,7 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: B
 
 
@@ -3221,6 +3325,7 @@ console.log(one, two, three)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -3264,6 +3369,7 @@ secondFunction()
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 
@@ -3303,6 +3409,7 @@ for (let item of set) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 “+”运算符不仅用于添加数值，还可以使用它来连接字符串。 每当JavaScript引擎发现一个或多个值不是数字时，就会将数字强制为字符串。 
@@ -3331,6 +3438,7 @@ Promise.resolve(5)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -3365,6 +3473,7 @@ compareMembers(person)
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3406,6 +3515,7 @@ console.log(colorConfig.colors[1])
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 在JavaScript中，我们有两种访问对象属性的方法：括号表示法或点表示法。 在此示例中，我们使用点表示法（`colorConfig.colors`）代替括号表示法（`colorConfig [“ colors”]`）。
@@ -3432,6 +3542,7 @@ console.log('❤️' === '❤️')
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -3464,6 +3575,7 @@ emojis.splice(1, 2, '✨')
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D
 
 使用`splice`方法，我们通过删除，替换或添加元素来修改原始数组。 在这种情况下，我们从索引1中删除了2个元素（我们删除了`'🥑'`和`'😍'`），同时添加了✨emoji表情。
@@ -3494,6 +3606,7 @@ console.log(food)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 我们将`info`对象上的`favoriteFood`属性的值设置为披萨表情符号“🍕”的字符串。字符串是原始数据类型。在JavaScript中，原始数据类型通过值起作用
@@ -3518,6 +3631,7 @@ JSON.parse()
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -3563,6 +3677,7 @@ getName()
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: D 
 
 每个函数都有其自己的执行上下文。 `getName`函数首先在其自身的上下文（范围）内查找，以查看其是否包含我们尝试访问的变量`name`。 上述情况，`getName`函数包含其自己的`name`变量：我们用`let`关键字和`Sarah`的值声明变量`name`。
@@ -3607,6 +3722,7 @@ console.log(two.next().value)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 通过 `yield` 关键字, 我们在 `Generator` 函数里执行`yield`表达式. 通过 `yield*` 关键字, 我们可以在一个`Generator` 函数里面执行（`yield`表达式）另一个 `Generator` 函数, 或可遍历的对象 (如数组).
@@ -3646,6 +3762,7 @@ console.log(`${(x => x)('I love')} to program`)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: A
 
 带有模板字面量的表达式首先被执行。相当于字符串会包含表达式，这个立即执行函数 `(x => x)('I love')` 返回的值. 我们向箭头函数 `x => x` 传递 `'I love'` 作为参数。`x` 等价于返回的 `'I love'`。这就是结果 `I love to program`。
@@ -3673,6 +3790,7 @@ config = null
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -3704,6 +3822,7 @@ myMap.get(() => 'greeting')
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3742,6 +3861,7 @@ console.log(person)
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 函数 `changeAge` 和函数 `changeAgeAndName` 有着不同的参数，定义一个 _新_ 生成的对象 `{ ...person }`。这个对象有着所有 `person` 对象 中 k/v 值的副本。
@@ -3771,6 +3891,7 @@ function sumValues(x, y, z) {
 <details><summary><b>答案</b></summary>
 <p>
 
+
 #### 答案: C
 
 通过展开操作符 `...`，我们可以 _暂开_ 单个可迭代的元素。函数 `sumValues` function 接收三个参数： `x`, `y` 和 `z`。`...[1, 2, 3]` 的执行结果为 `1, 2, 3`，将会传递给函数 `sumValues`。
@@ -3795,6 +3916,7 @@ console.log(list[(num += 1)]);
 
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3824,12 +3946,15 @@ console.log(person.pet?.family?.name);
 console.log(person.getFullName?.());
 console.log(member.getLastName?.());
 ```
+
 - A: `undefined` `undefined` `undefined` `undefined`
 - B: `Mara` `undefined` `Lydia Hallie` `undefined`
 - C: `Mara` `null` `Lydia Hallie` `null`
 - D: `null` `ReferenceError` `null` `ReferenceError`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3844,6 +3969,7 @@ console.log(member.getLastName?.());
 ---
 
 ### 120. 输出什么？
+
 ```javascript
 const groceries = ["banana", "apple", "peanuts"];
 if (groceries.indexOf("banana")) {
@@ -3852,12 +3978,15 @@ if (groceries.indexOf("banana")) {
 	console.log(`We don't have to buy bananas!`);
 }
 ```
+
 - A: We have to buy bananas!
 - B: We don't have to buy bananas
 - C: `undefined`
 - D: `1`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -3868,6 +3997,7 @@ if (groceries.indexOf("banana")) {
 ---
 
 ### 121. 输出什么?
+
 ```javascript
 const config = {
 	languages: [],
@@ -3877,12 +4007,15 @@ const config = {
 };
 console.log(config.language);
 ```
+
 - A: `function language(lang) { this.languages.push(lang }`
 - B: `0`
 - C: `[]`
 - D: `undefined`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -3893,17 +4026,21 @@ console.log(config.language);
 ---
 
 ### 122. 输出什么？
+
 ```javascript
 const name = "Lydia Hallie";
 console.log(!typeof name === "object");
 console.log(!typeof name === "string");
 ```
+
 - A: `false` `true`
 - B: `true` `false`
 - C: `false` `false`
 - D: `true` `true`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -3915,6 +4052,7 @@ console.log(!typeof name === "string");
 ---
 
 ### 123. 输出什么?
+
 ```javascript
 const add = x => y => z => {
 	console.log(x, y, z);
@@ -3922,12 +4060,15 @@ const add = x => y => z => {
 };
 add(4)(5)(6);
 ```
+
 - A: `4` `5` `6`
 - B: `6` `5` `4`
 - C: `4` `function` `function`
 - D: `undefined` `undefined` `6`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -3938,6 +4079,7 @@ add(4)(5)(6);
 ---
 
 ### 124. 输出什么？
+
 ```javascript
 async function* range(start, end) {
 	for (let i = start; i <= end; i++) {
@@ -3951,12 +4093,15 @@ async function* range(start, end) {
 	}
 })();
 ```
+
 - A: `Promise {1}` `Promise {2}` `Promise {3}`
 - B: `Promise {<pending>}` `Promise {<pending>}` `Promise {<pending>}`
 - C: `1` `2` `3`
 - D: `undefined` `undefined` `undefined`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -3967,18 +4112,22 @@ async function* range(start, end) {
 ---
 
 ### 125. 输出什么？
+
 ```javascript
 const myFunc = ({ x, y, z }) => {
 	console.log(x, y, z);
 };
 myFunc(1, 2, 3);
 ```
+
 - A: `1` `2` `3`
 - B: `{1: 1}` `{2: 2}` `{3: 3}`
 - C: `{ 1: undefined }` `undefined` `undefined`
 - D: `undefined` `undefined` `undefined`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -3989,6 +4138,7 @@ myFunc(1, 2, 3);
 ---
 
 ### 126. 输出什么？
+
 ```javascript
 function getFine(speed, amount) {
   const formattedSpeed = new Intl.NumberFormat({
@@ -4003,12 +4153,15 @@ function getFine(speed, amount) {
 }
 console.log(getFine(130, 300))
 ```
+
 - A: The driver drove 130 and has to pay 300
 - B: The driver drove 130 mph and has to pay \$300.00
 - C: The driver drove undefined and has to pay undefined
 - D: The driver drove 130.00 and has to pay 300.00
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -4019,17 +4172,21 @@ console.log(getFine(130, 300))
 ---
 
 ### 127. 输出什么？
+
 ```javascript
 const spookyItems = ["👻", "🎃", "🕸"];
 ({ item: spookyItems[3] } = { item: "💀" });
 console.log(spookyItems);
 ```
+
 - A: `["👻", "🎃", "🕸"]`
 - B: `["👻", "🎃", "🕸", "💀"]`
 - C: `["👻", "🎃", "🕸", { item: "💀" }]`
 - D: `["👻", "🎃", "🕸", "[object Object]"]`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -4040,6 +4197,7 @@ console.log(spookyItems);
 ---
 
 ### 128. 输出什么？
+
 ```javascript
 const name = "Lydia Hallie";
 const age = 21;
@@ -4048,12 +4206,15 @@ console.log(Number.isNaN(age));
 console.log(isNaN(name));
 console.log(isNaN(age));
 ```
+
 - A: `true` `false` `true` `false`
 - B: `true` `false` `false` `false`
 - C: `false` `false` `true` `false`
 - D: `false` `true` `false` `true`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4065,6 +4226,7 @@ console.log(isNaN(age));
 ---
 
 ### 129. 输出什么？
+
 ```javascript
 const randomValue = 21;
 function getInfo() {
@@ -4073,12 +4235,15 @@ function getInfo() {
 }
 getInfo();
 ```
+
 - A: `"number"`
 - B: `"string"`
 - C: `undefined`
 - D: `ReferenceError`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -4089,6 +4254,7 @@ getInfo();
 ---
 
 ### 130. 输出什么？
+
 ```javascript
 const myPromise = Promise.resolve("Woah some cool data");
 (async () => {
@@ -4101,12 +4267,15 @@ const myPromise = Promise.resolve("Woah some cool data");
 	}
 })();
 ```
+
 - A: `Woah some cool data`
 - B: `Oh finally!`
 - C: `Woah some cool data` `Oh finally!`
 - D: `Oops didn't work` `Oh finally!`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4117,16 +4286,20 @@ const myPromise = Promise.resolve("Woah some cool data");
 ---
 
 ### 131. 输出什么？
+
 ```javascript
 const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
 console.log(emojis.flat(1));
 ```
+
 - A: `['🥑', ['✨', '✨', ['🍕', '🍕']]]`
 - B: `['🥑', '✨', '✨', ['🍕', '🍕']]`
 - C: `['🥑', ['✨', '✨', '🍕', '🍕']]`
 - D: `['🥑', '✨', '✨', '🍕', '🍕']`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -4137,6 +4310,7 @@ console.log(emojis.flat(1));
 ---
 
 ### 132. 输出什么？
+
 ```javascript
 class Counter {
 	constructor() {
@@ -4153,12 +4327,15 @@ const counterTwo = counterOne;
 counterTwo.increment();
 console.log(counterOne.count);
 ```
+
 - A: `0`
 - B: `1`
 - C: `2`
 - D: `3`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -4173,6 +4350,7 @@ console.log(counterOne.count);
 ---
 
 ### 133. 输出什么？
+
 ```javascript
 const myPromise = Promise.resolve(Promise.resolve("Promise!"));
 function funcOne() {
@@ -4189,12 +4367,15 @@ async function funcTwo() {
 funcOne();
 funcTwo();
 ```
+
 - A: `Promise! Last line! Promise! Last line! Last line! Promise!`
 - B: `Last line! Timeout! Promise! Last line! Timeout! Promise!`
 - C: `Promise! Last line! Last line! Promise! Timeout! Timeout!`
 - D: `Last line! Promise! Promise! Last line! Timeout! Timeout!`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -4209,6 +4390,7 @@ promise 和 timeout 都是异步操作，函数继续执行当JS引擎忙于执�
 ---
 
 ### 134. 我们怎样才能在 `index.js` 中调用 `sum.js?` 中的 `sum`？
+
 ```javascript
 // sum.js
 export default function sum(x) {
@@ -4217,16 +4399,20 @@ export default function sum(x) {
 // index.js
 import * as sum from "./sum";
 ```
+
 - A: `sum(4)`
 - B: `sum.sum(4)`
 - C: `sum.default(4)`
 - D: 默认导出不用 `*` 来导入，只能具名导出
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
 使用符号 `*`，我们引入文件中的所有值，包括默认和具名。如果我们有以下文件：
+
 ```javascript
 // info.js
 export const name = "Lydia";
@@ -4236,7 +4422,9 @@ export default "I love JavaScript";
 import * as info from "./info";
 console.log(info);
 ```
+
 将会输出以下内容：
+
 ```javascript
 {
   default: "I love JavaScript",
@@ -4244,10 +4432,13 @@ console.log(info);
   age: 21
 }
 ```
+
 以 `sum` 为例，相当于以下形式引入值 `sum`：
+
 ```javascript
 { default: function sum(x) { return x + x } }
 ```
+
 我们可以通过调用 `sum.default` 来调用该函数
 </p>
 </details>
@@ -4255,6 +4446,7 @@ console.log(info);
 ---
 
 ### 135. 输出什么？
+
 ```javascript
 const handler = {
 	set: () => console.log("Added a new property!"),
@@ -4264,12 +4456,15 @@ const person = new Proxy({}, handler);
 person.name = "Lydia";
 person.name;
 ```
+
 - A: `Added a new property!`
 - B: `Accessed a property!`
 - C: `Added a new property!` `Accessed a property!`
 - D: 没有任何输出
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4283,16 +4478,20 @@ person.name;
 ---
 
 ### 136. 以下哪一项会对对象 `person` 有副作用？
+
 ```javascript
 const person = { name: "Lydia Hallie" };
 Object.seal(person);
 ```
+
 - A: `person.name = "Evan Bacon"`
 - B: `person.age = 21`
 - C: `delete person.name`
 - D: `Object.assign(person, { age: 21 })`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -4304,6 +4503,7 @@ Object.seal(person);
 ---
 
 ### 137. 以下哪一项会对对象 `person` 有副作用？
+
 ```javascript
 const person = {
 	name: "Lydia Hallie",
@@ -4313,12 +4513,15 @@ const person = {
 };
 Object.freeze(person);
 ```
+
 - A: `person.name = "Evan Bacon"`
 - B: `delete person.address`
 - C: `person.address.street = "101 Main St"`
 - D: `person.pet = { name: "Mara" }`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4330,6 +4533,7 @@ Object.freeze(person);
 ---
 
 ### 138. 以下哪一项会对对象 `person` 有副作用？
+
 ```javascript
 const person = {
 	name: "Lydia Hallie",
@@ -4339,12 +4543,15 @@ const person = {
 };
 Object.freeze(person);
 ```
+
 - A: `person.name = "Evan Bacon"`
 - B: `delete person.address`
 - C: `person.address.street = "101 Main St"`
 - D: `person.pet = { name: "Mara" }`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4356,6 +4563,7 @@ Object.freeze(person);
 ---
 
 ### 139. 输出什么？
+
 ```javascript
 const add = x => x + x;
 function myFunc(num = 2, value = add(num)) {
@@ -4364,12 +4572,15 @@ function myFunc(num = 2, value = add(num)) {
 myFunc();
 myFunc(3);
 ```
+
 - A: `2` `4` and `3` `6`
 - B: `2` `NaN` and `3` `NaN`
 - C: `2` `Error` and `3` `6`
 - D: `2` `4` and `3` `Error`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: A
 
@@ -4381,6 +4592,7 @@ myFunc(3);
 ---
 
 ### 140. 输出什么？
+
 ```javascript
 class Counter {
   #number = 10
@@ -4395,12 +4607,15 @@ const counter = new Counter()
 counter.increment()
 console.log(counter.#number)
 ```
+
 - A: `10`
 - B: `11`
 - C: `undefined`
 - D: `SyntaxError`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -4411,6 +4626,7 @@ console.log(counter.#number)
 ---
 
 ### 141. 选择哪一个？
+
 ```javascript
 const teams = [
 	{ name: "Team 1", members: ["Paul", "Lisa"] },
@@ -4430,12 +4646,15 @@ const obj = getTeams(teams);
 obj.next(); // { value: "Paul", done: false }
 obj.next(); // { value: "Lisa", done: false }
 ```
+
 - A: `yield getMembers(teams[i].members)`
 - B: `yield* getMembers(teams[i].members)`
 - C: `return getMembers(teams[i].members)`
 - D: `return yield getMembers(teams[i].members)`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -4447,6 +4666,7 @@ obj.next(); // { value: "Lisa", done: false }
 ---
 
 ### 142. 输出什么？
+
 ```javascript
 const person = {
 	name: "Lydia Hallie",
@@ -4461,12 +4681,15 @@ addHobby("dancing");
 addHobby("baking", person.hobbies);
 console.log(person.hobbies);
 ```
+
 - A: `["coding"]`
 - B: `["coding", "dancing"]`
 - C: `["coding", "dancing", "baking"]`
 - D: `["coding", "running", "dancing", "baking"]`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4481,6 +4704,7 @@ pushing `dancing` 和 `baking` 之后，`person.hobbies` 的值为 `["coding", "
 ---
 
 ### 143. 输出什么？
+
 ```javascript
 class Bird {
 	constructor() {
@@ -4495,12 +4719,15 @@ class Flamingo extends Bird {
 }
 const pet = new Flamingo();
 ```
+
 - A: `I'm pink. 🌸`
 - B: `I'm pink. 🌸` `I'm a bird. 🦢`
 - C: `I'm a bird. 🦢` `I'm pink. 🌸`
 - D: Nothing, we didn't call any method
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: B
 
@@ -4511,6 +4738,7 @@ const pet = new Flamingo();
 ---
 
 ### 144. 哪一个选项会导致报错？
+
 ```javascript
 const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 /* 1 */ emojis.push("🦌");
@@ -4518,12 +4746,15 @@ const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 /* 3 */ emojis = [...emojis, "🥂"];
 /* 4 */ emojis.length = 0;
 ```
+
 - A: 1
 - B: 1 and 2
 - C: 3 and 4
 - D: 3
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: D
 
@@ -4534,6 +4765,7 @@ const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
 ---
 
 ### 145. 我们需要向对象 `person` 添加什么，以致执行 `[...person]` 时获得形如 `["Lydia Hallie", 21]` 的输出？
+
 ```javascript
 const person = {
   name: "Lydia Hallie",
@@ -4541,12 +4773,15 @@ const person = {
 }
 [...person] // ["Lydia Hallie", 21]
 ```
+
 - A: 不需要，对象默认就是可迭代的
 - B: `*[Symbol.iterator]() { for (let x in this) yield* this[x] }`
 - C: `*[Symbol.iterator]() { for (let x in this) yield* Object.values(this) }`
 - D: `*[Symbol.iterator]() { for (let x in this) yield this }`
+
 <details><summary><b>答案</b></summary>
 <p>
+
 
 #### 答案: C
 
@@ -4570,273 +4805,14 @@ const person = {
 
 
 
+
+
+```
+::: tip
+
+这是一个提示
+
+:::
+```
+
 ------
-
-
-<style>
-
-/* Sspai Web Theme A theme to [sspai](ssp.ai) default theme. Developed by Codegass(wchweichenhao@gmial.com) & Yves(yves@sspai.com) Download Cuto on the App Store and Google Play! */
-
-body {
-	font-size: 15px;
-	color: #333;
-	background: #fff;
-	font-family: Helvetica, Arial, "PingFang SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "tohoma,sans-serif";
-	margin: 0;
-	padding: 10%;
-}
-h1 {
-	font-size: 2.2em;
-	font-weight: 700;
-	line-height: 1.1;
-	padding-top: 16px;
-	margin-bottom: 4px;
-}
-h2, h3, h4, h5, h6 {
-	line-height: 1.5em;
-	margin-top: 2.2em;
-	margin-bottom: 4px;
-}
-h2 {
-	font-size: 1.4em;
-	margin: 40px 10px 20px 0;
-	padding-left: 9px;
-	border-left: 6px solid #ff7e79;
-	font-weight: 700;
-	line-height: 1.4;
-}
-h3 {
-	font-weight: 700;
-	font-size: 1.2em;
-	line-height: 1.4;
-	margin: 10px 0 5px;
-	padding-top: 10px;
-}
-h4 {
-	font-weight: 700;
-	text-transform: uppercase;
-	font-size: 1.1em;
-	line-height: 1.4;
-	margin: 10px 0 5px;
-	padding-top: 10px
-}
-h5, h6 {
-	font-size: .9em;
-}
-h5 {
-	font-weight: bold;
-	text-transform: uppercase;
-}
-h6 {
-	font-weight: normal;
-	color: #AAA;
-}
-img {
-	width: 100%;
-	border-radius: 5px;
-	display: block;
-	margin-bottom: 15px;
-	height: auto;
-}
-dl, ol, ul {
-	margin-top: 12px;
-	margin-bottom: 20px;
-	padding-left: 5%;
-	line-height: 1.8;
-}
-p {
-	margin: 0 0 20px;
-	padding: 0;
-	line-height: 1.8;
-}
-a {
-	color: #f22f27;
-	text-decoration: none;
-}
-a:hover {
-	color: #f55852;
-	text-decoration: underline;
-}
-a:focus {
-	outline-offset: -2px;
-}
-blockquote {
-	font-size: 1em;
-	font-style: normal;
-	padding: 30px 38px;
-	margin: 0 0 15px;
-	position: relative;
-	line-height: 1.8;
-	text-indent: 0;
-	border: none;
-	color: #888;
-}
-blockquote:before {
-	content: "“";
-	left: 12px;
-	top: 0;
-	color: #E0E0E0;
-	font-size: 4em;
-	font-family: Arial, serif;
-	line-height: 1em;
-	font-weight: 700;
-	position: absolute;
-}
-blockquote:after {
-	content: "”";
-	right: 12px;
-	bottom: -26px;
-	color: #E0E0E0;
-	font-size: 4em;
-	font-family: Arial, serif;
-	line-height: 1em;
-	font-weight: 700;
-	position: absolute;
-	bottom: -31px;
-}
-strong, dfn {
-	font-weight: 700;
-}
-em, dfn {
-	font-style: italic;
-	font-weight: 400;
-}
-del {
-	text-decoration: line-through;
-}
-/*code {font-size:90%;}*/
-
-/*pre {text-align:left; overflow-x: scroll; color: #257fa0; background: #f6f6f6; padding: 10pt 15pt; border-radius: 3px; border: solid 1px #e2e2e2;}*/
-
-pre {
-	margin: 0 0 10px;
-	font-size: 13px;
-	line-height: 1.42857;
-	word-break: break-all;
-	word-wrap: break-word;
-	border-radius: 4px;
-	white-space: pre-wrap;
-	display: block;
-	background: #f8f8f8;
-	padding: 10px 20px;
-	border: none;
-	margin-bottom: 25px;
-	color: #666;
-	font-family: Courier, sans-serif;
-}
-code {
-	color: #c7254e;
-	background-color: #f9f2f4;
-	border-radius: 4px;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	padding: 2px 4px;
-	font-size: 90%;
-}
-p>code {
-	color: #c7264e;
-	background-color: #f9f2f4;
-	font-size: .95em;
-	border-radius: 3px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-}
-figure {
-	margin: 1em 0;
-}
-figcaption {
-	font-size: 0.75em;
-	padding: 0.5em 2em;
-	margin-bottom: 2em;
-}
-figure img {
-	margin-bottom: 0px;
-}
-hr {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 0;
-	border-top: 1px solid #eee;
-}
-ol p, ul p {
-	margin-bottom: 0px;
-}
-li {
-	margin-bottom: 0.75em;
-	margin-top: 0.75em;
-}
-ol#footnotes {
-	font-size: 0.95em;
-	padding-top: 1em;
-	margin-top: 1em;
-	margin-left: 0;
-	border-top: 1px solid #eaeaea;
-	counter-reset: footer-counter;
-	list-style: none;
-	color: #555;
-	padding-left: 5%;
-	margin: 20px 0;
-}
-ol#footnotes li {
-	margin-bottom: 10px;
-	margin-left: 16px;
-	font-weight: 400;
-	line-height: 2;
-	list-style-type: none;
-}
-ol#footnotes li:before {
-	content: counter(footer-counter) ". ";
-	counter-increment: footer-counter;
-	font-weight: 800;
-	font-size: .95em;
-}
-@keyframes highfade {
-	0% {
-		background-color: none;
-	}
-	20% {
-		background-color: yellow;
-	}
-	100% {
-		background-color: none;
-	}
-}
-@-webkit-keyframes highfade {
-	0% {
-		background-color: none;
-	}
-	20% {
-		background-color: yellow;
-	}
-	100% {
-		background-color: none;
-	}
-}
-a:target, ol#footnotes li:target, sup a:target {
-	animation-name: highfade;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-name: highfade;
-	-webkit-animation-duration: 2s;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-timing-function: ease-in-out;
-}
-a:target {
-	border: 0;
-	outline: 0;
-}
-animation-iteration-count: 1;
--webkit-animation-timing-function: ease-in-out;
-}
-a:target {
-	border: 0;
-	outline: 0;
-}
-tion-iteration-count: 1;
--webkit-animation-timing-function: ease-in-out;
-}
-a:target {
-	border: 0;
-	outline: 0;
-}
-</style>
