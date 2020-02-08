@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Interview-summary
+title:      70个JavaScript面试问题
 subtitle:   Record the topics encountered during the interviews these days.
 date:       2019-3-21 20:59:21
 author:     gankai
@@ -138,7 +138,7 @@ css:
          background-color: blueviolet;
          position: relative;
      }
-
+    
      .inner {
          height: 120px;
          width: 120px;
@@ -158,7 +158,7 @@ css:
          background-color: blueviolet;
          position: relative;
      }
-
+    
      .inner {
          height: 120px;
          width: 120px;
@@ -179,7 +179,7 @@ css:
           justify-content: center;
           align-items: center;
       }
-
+    
       .inner {
           height: 120px;
           width: 120px;
@@ -196,7 +196,7 @@ css:
           text-align: center;
           vertical-align: middle;
       }
-
+    
       .inner {
           display: inline-block;
           height: 120px;
@@ -212,7 +212,7 @@ css:
         width: 400px;
         height: 160px;
     }
-
+    
     .inner {
         position: absolute;
         width: 200px;
@@ -235,7 +235,7 @@ css:
             var a = function () {
                 console.log('1')
             }
-
+    
             function a() {
                 console.log('2')
             }
@@ -467,13 +467,13 @@ console.log(b)    //  test()未执行的问题
 `分析:` AO:activation object  活跃对象,函数上下文.
 
     执行步骤如下:
-
+    
           1、找到形参和变量声明，将变量和形参名作为AO属性名，值为underfined
           2、将实参值赋值给形参,将实参值和形参值统一
           3、找函数申明,在函数体里面找到函数声明，值作为跟AO属性对应的值
           4、给变量赋值,
           5、执行函数
-
+    
     AO = {
       a:undefined-->
         2-->
@@ -481,7 +481,7 @@ console.log(b)    //  test()未执行的问题
         1
       b:undefined-->
         function () {}-->
-
+    
       d:undefined-->
         function d() {}
     }
@@ -508,7 +508,7 @@ GO:global object 全局上下文 执行步骤是:
       return a;
     }
     console.log(test())    //  2
-
+    
     function demo() {
       return a;
       a = 1 ;
@@ -773,7 +773,7 @@ if(str === trueTip){
     当开始的时候,从obj[obj.length]开始push,执行push(2),即obj[2] = 1(那么obj.2 = 1),
     然后length自增加1成为3,执行push(3),即obj[3] = 2(那么obj.3 = 3),然后length自增加1,成为4.
     之前的key为2,3就被替换成为了现在的1,2所对应的值.
-
+    
     obj[2] = 1
     obj[3] = 2
 
@@ -828,14 +828,14 @@ Symbol 是一种特殊的、不可变的数据类型，可以作为对象属性�
 ###  cookie有哪些优点?
 
       `优点：`
-
+    
       极高的扩展性和可用性,通过良好的编程，控制保存在cookie中的session对象的大小。
       通过加密和安全传输技术（SSL），减少cookie被破解的可能性。
       只在cookie中存放不敏感数据，即使被盗也不会有重大损失。
       控制cookie的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的cookie。
-
+    
       `缺点：`
-
+    
       Cookie数量和长度的限制。每个domain最多只能有20条cookie，每个cookie长度不能超过4KB，否则会被截掉。
       安全性问题。如果cookie被人拦截了，那人就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，他只要原样转发cookie就可以达到目的了。
       有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。  
@@ -851,7 +851,7 @@ Symbol 是一种特殊的、不可变的数据类型，可以作为对象属性�
           <span>姓名</span>
         </div>
       </div>
-
+    
     .waper {
         width: 200px;
         height: 200px;
@@ -859,7 +859,7 @@ Symbol 是一种特殊的、不可变的数据类型，可以作为对象属性�
         background: #ccc;
         overflow: hidden;
     }
-
+    
     .waper .waper-inner {
         width: 100px;
         height: 100px;
@@ -869,7 +869,7 @@ Symbol 是一种特殊的、不可变的数据类型，可以作为对象属性�
         right: -50px;
         transform: rotate(45deg);
     }
-
+    
     .waper .waper-inner span {
         position: absolute;
         bottom: 0;
@@ -1060,7 +1060,7 @@ function bubble(array){
 
 ###  选择排序
 function selectSort(){
-  
+
 }
 ###  用push手写一个快速排序
 `分析:`快速排序的优点就是速度快，为什么速度快呢？我先介绍一下快速排序的原理。
@@ -1098,6 +1098,5 @@ function selectSort(){
 
 
 ##  其他
-
 
 
