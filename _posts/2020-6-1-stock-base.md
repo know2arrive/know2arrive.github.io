@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      🌟初识股票-base
+title:      🌟初识股票
 subtitle:   股票投资
 date:       2020-6-2 22:03:16
 author:     gankai
