@@ -1,16 +1,3 @@
----
-layout: post
-title: typescript
-subtitle: typescript 分享
-date: 2021-05-30 22:45:54
-author: gankai
-header-img: img/post-bg-ios9-web.jpg
-catalog: true
-tags:
-  - study
-  - typescript
----
-
 ## 1. typescript 带来了什么优势？
 
 1. 在开发过程中，发现潜在问题，会有类型提示，参数检测等。
@@ -193,4 +180,136 @@ interface ISayHi {
 const sayHi: ISayHi = (word) => {
   return `hello ${word}`;
 };
+```
+
+### 5. 类
+
+```jsx
+class Persons {
+  name = "ts";
+  getName() {
+    return this.name;
+  }
+}
+
+class Teacher extends Persons {
+  getTeacherName() {
+    return `teacher`;
+  }
+  getName() {
+    // 重写父类的方法，那么如果我就是想返回父类的方法呢？
+    // 使用super调用父类的方法
+    // return super.getName();
+    return `js`;
+  }
+}
+
+const teacher = new Teacher();
+// console.log(`getTeacherName`, teacher.getTeacherName());
+// console.log(`getName`, teacher.getName());
+console.log(`getName`, teacher.getName());
+```
+
+5.1 访问修饰符
+
+- `public`:允许在自己类的内部和外部都能被访问(默认);
+- `private`:只允许在自己类的内部被访问;
+- `protected`:允许在自己类的内部以及继承的子类中被访问;
+
+```jsx
+class Man {
+  public name = "ts";
+  private age = 10;
+  protected address = "China";
+  getName() {
+    return this.name;
+  }
+  getAge() {
+    return this.age;
+  }
+}
+
+class Me extends Man {
+  getAddress() {
+    this.address; // protected
+  }
+}
+
+const man = new Man();
+console.log(`man:`, man);
+```
+
+5.2 类的构造函数： `constructor`
+
+```jsx
+class Parent {
+  public name: string = "ts";
+  constructor(name: string = "ts") {
+    this.name = name;
+  }
+}
+```
+
+在构造函数中传参，还可以有以下的写法：
+
+```jsx
+class Parent {
+  constructor(public name: string = "ts") {
+    // .....
+  }
+}
+```
+
+5.3 类的继承：`super`
+
+```jsx
+class Parent {
+  constructor(public name: string = "ts") {}
+}
+
+class Child extends Parent {
+// 继承了 Parent类，如果在子类中调用了constructor
+  constructor() {
+    super();  // 就一定要在constructor中调用super
+  }
+}
+```
+
+5.4 类的静态属性：`getter` 和 `setter`
+
+```jsx
+class Human {
+  constructor(private _name: string) {}
+  get name() {
+    return `get ${this._name}`;
+  }
+  set name(name: string) {
+    this._name = `set ${name}`;
+  }
+}
+
+const human = new Human(`ts`);
+console.log(human.name);
+
+human.name = "js";
+console.log("set", human.name);
+```
+
+单例模式
+
+```jsx
+class Singleton {
+  private constructor() {}
+  private static instance: Singleton;
+
+  static getInstance() {
+    if (this.instance) return this.instance;
+    this.instance = new Singleton();
+    return this.instance;
+  }
+}
+
+const single = Singleton.getInstance();
+const singleTwo = Singleton.getInstance();
+console.log(`isSame:`, singleTwo === single);
 ```
