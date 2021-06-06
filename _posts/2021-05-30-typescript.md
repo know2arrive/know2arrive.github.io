@@ -262,15 +262,15 @@ class Parent {
 
 5.3 类的继承：`super`
 
-```jsx
+```tsx
 class Parent {
   constructor(public name: string = "ts") {}
 }
 
 class Child extends Parent {
-// 继承了 Parent类，如果在子类中调用了constructor
+  // 继承了 Parent类，如果在子类中调用了constructor
   constructor() {
-    super();  // 就一定要在constructor中调用super
+    super(); // 就一定要在constructor中调用super
   }
 }
 ```
@@ -297,7 +297,7 @@ console.log("set", human.name);
 
 单例模式
 
-```jsx
+```tsx
 class Singleton {
   private constructor() {}
   private static instance: Singleton;
@@ -313,3 +313,228 @@ const single = Singleton.getInstance();
 const singleTwo = Singleton.getInstance();
 console.log(`isSame:`, singleTwo === single);
 ```
+
+## 6. `tsconfig.json`文件的配置
+
+运行`tsc`命令的时候，默认会读取项目目录下的`tsconfig.json`文件（如果这个文件存在），如果指定运行某个`.ts`文件，则不会读取配置文件。但是`ts-node`会读取这个配置文件。
+
+## 7. 类型保护
+
+```tsx
+// 类型保护的方式
+interface Bird {
+  fly: boolean;
+  sing: () => {};
+}
+
+interface Dog {
+  fly: boolean;
+  bark: () => {};
+}
+
+// 1. 采用类型断言的形式
+function trainAnimal(animal: Bird | Dog) {
+  //  animal.fly() 目前只能确定anima上只有fly属性
+  (animal as Bird).sing();
+  (animal as Dog).bark();
+}
+
+// 2. 采用 in 语法来进行类型保护
+function trainAnimalAgain(animal: Bird | Dog) {
+  if ("bark" in animal) {
+    animal.bark();
+  }
+}
+```
+
+## 8. 枚举类型`enum`
+
+```tsx
+enum NETWORK_STATUS {
+  offline,
+  online = 3,
+  delete,
+}
+// 可以反查NETWORK_STATUS[0] 就是 offline
+console.log(`:>>>>: NETWORK_STATUS`, NETWORK_STATUS);
+// const NETWORK_STATUS = {
+//   offline: 0,
+//   online: 1,
+//   delete: 2,
+// };
+
+function getNetworkStatus(status: number) {
+  switch (status) {
+    case NETWORK_STATUS.offline:
+      return "offline";
+    case NETWORK_STATUS.online:
+      return "online";
+    default:
+      return "delete";
+  }
+}
+
+const network = getNetworkStatus(NETWORK_STATUS.online);
+console.log(`:>>>>: network`, network);
+```
+
+## 9. 泛型 `generics`
+
+### 9.1 函数中的泛型
+
+```jsx
+// 泛型 generics泛指的类型
+function join(first: string | number, second: number | string) {
+  return `${first} join ${second}`;
+}
+join("1", "3");
+// 假设现在，我要求当join函数的第一个参数的类型是string的时候，
+// 第二个也必须是string，那该怎么办？
+```
+
+我们需要将这个`join`函数进行改造一下：
+
+```tsx
+function join<T, K>(first: T, second: K) {
+  return `${first} join ${second}`;
+}
+// 只有你用的时候，才知道类型
+join<number, string>(1, "3");
+```
+
+或者接收一个数组
+
+```tsx
+function array<P>(params: Array<P>): P {
+  return params[0];
+}
+
+array<string>(["map"]);
+```
+
+### 9.2 类中的泛型
+
+```jsx
+class DataManager {
+  constructor(private data: string[]) {}
+  getItem(index: number): string {
+    return this.data[index];
+  }
+}
+
+const data = new DataManager(["1"]);
+data.getItem(0);
+```
+
+使用泛型改造如下：
+
+```tsx
+class DataManager<T> {
+  constructor(private data: T[]) {}
+  getItem(index: number): T {
+    return this.data[index];
+  }
+}
+
+const data = new DataManager<number>([1]);
+data.getItem(0);
+```
+
+泛型的继承：
+
+```tsx
+interface Item {
+  name: string;
+}
+
+class DataManager<T extends Item> {
+  constructor(private data: T[]) {}
+  getItem(index: number): string {
+    // 假如我现在要求每个T类型的实例，必须还要求有name属性，那么该如何处理？
+    // 继承一个Item，实例化的时候，必须要有个name属性
+    return this.data[index].name;
+  }
+}
+
+const data = new DataManager([
+  {
+    name: "ts",
+  },
+]);
+```
+
+### 9.3 泛型中`keyof`语法的使用
+
+```tsx
+interface ITeacher {
+  name: string;
+  age: number;
+  gender: string;
+  // [propName: string]: any;
+}
+
+class Teachers {
+  constructor(private info: ITeacher) {}
+  getInfo(key: string) {
+    // 怎么保证传入的这个key一定是name，age，gender中的一种？
+    // 假设我调用getInfo的时候，传入的是一个'address'的字符串,那么返回值是什么类型的呢？
+    // 主要问题是这个key的值不确定
+    return this.info[key];
+  }
+}
+
+const teach = new Teachers({
+  name: "ts",
+  age: 19,
+  gender: "male",
+});
+const result = teach.getInfo("name");
+```
+
+可以每个 key 判断一下:
+
+```tsx
+class Teachers {
+  constructor(private info: ITeacher) {}
+  getInfo(key: string) {
+    if (key === "name" || key === "age" || key === "gender") {
+      return this.info[key];
+    }
+  }
+}
+```
+
+但是，在调用的时候，`teach.getInfo`函数的类型却是`string`| `number`| `undefined`，这个是
+
+`typescript`给出的类型推断，但是这个并不准确，是否有其他更好的解决办法呢？使用`const result = teach.getInfo("name") as string;` ？但是这个并不是一个最优的解法！
+
+```tsx
+const teach = new Teachers({
+  name: "ts",
+  age: 19,
+  gender: "male",
+});
+const result = teach.getInfo("name");
+```
+
+使用`keyof`解决这个问题，`keyof`的原理其实就是循环遍历`ITeacher`上的每个属性，并且泛型`T`继承了每个属性!
+
+```tsx
+class Teachers {
+  constructor(private info: ITeacher) {}
+  getInfo<T extends keyof ITeacher>(key: T) {
+    return this.info[key];
+  }
+}
+
+const teach = new Teachers({
+  name: "ts",
+  age: 19,
+  gender: "male",
+});
+const result = teach.getInfo("age");
+```
+
+## 10. 命名空间 `namespace`
+
+## 11. 自定义全局类型声明文件
