@@ -1,15 +1,15 @@
 ---
 layout:     post/2024-7
-title:      最全的Git入门操作使用详解
-subtitle:   最全的Git入门操作使用详解 进阶
+title:      Python 基础
+subtitle:   Python 基础知识 全
 date:       2024-7-1 19:03:16
-author:     gankai
+author:     know2arrive
 header-img: img/post-bg-ios9-web.jpg
 catalog: true
 tags:
     - Python
     - 函数式编程
-    - 开源框架
+    - 面向对象
 ---
 
 ##     1.Python历史与简介
